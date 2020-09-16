@@ -21,7 +21,7 @@ class Emissao extends Core\Http{
     }
     
     public function incluir(array $body){
-        $controller = FbitsController::getInstance();
+        $controller = BIBoletoCobController::getInstance();
         
         $response = $this->http->post("/", array(
             "headers" => [
