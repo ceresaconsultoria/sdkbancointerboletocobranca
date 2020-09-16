@@ -26,9 +26,9 @@ class BIBoletoCobController {
         $this->token = null;
     }
     
-    public static function getInstance() : FbitsController{
+    public static function getInstance() : BIBoletoCobController{
         if (!isset(self::$instance)) {
-            self::$instance = new FbitsController();
+            self::$instance = new BIBoletoCobController();
         }
         
         return self::$instance;
