@@ -1,0 +1,32 @@
+{
+    "name": "ceresaconsultoria/sdkbancointerboletocobranca",
+    "description": "SDK PHP da api de boleto de cobrança do banco intermium",
+    "keywords": ["api", "library", "psr-3", "banco inter", "boleto de cobrança"],
+    "homepage": "https://github.com/ceresaconsultoria/fbits-library-php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Weslley Ceresa",
+            "email": "ceresaconsultoria@gmail.com",
+            "homepage": "https://www.ceresaconsultoria.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BIBoletoCob\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": []
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "victorjonsson/markdowndocs": "^1.3"
+    }
+}
