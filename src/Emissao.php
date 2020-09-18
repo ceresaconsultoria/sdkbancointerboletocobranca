@@ -28,7 +28,8 @@ class Emissao extends Core\Http{
                 "x-inter-conta-corrente" => $controller->getToken()
             ],
             "json" => $body,
-            "cert" => [$controller->getCrtPath(), $controller->getCrtPass()]
+            "cert" => [$controller->getCert(), $controller->getPassphrase()],
+            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));
 
         $response = (string)$response->getBody();

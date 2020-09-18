@@ -21,9 +21,11 @@ class BIBoletoCobController {
     
     private $config;
     
-    private $crtPath;
+    private $cert;
     
-    private $crtPass;
+    private $passphrase;
+    
+    private $sslKey;
     
     private function __construct() {
         $this->config = [];
@@ -56,21 +58,30 @@ class BIBoletoCobController {
         return $this;
     }
     
-    public function getCrtPath() {
-        return $this->crtPath;
+    public function getCert() {
+        return $this->cert;
     }
 
-    public function setCrtPath($crtPath) {
-        $this->crtPath = $crtPath;
+    public function getPassphrase() {
+        return $this->passphrase;
+    }
+
+    public function getSslKey() {
+        return $this->sslKey;
+    }
+
+    public function setCert($cert) {
+        $this->cert = $cert;
         return $this;
     }
-    
-    public function getCrtPass() {
-        return $this->crtPass;
+
+    public function setPassphrase($passphrase) {
+        $this->passphrase = $passphrase;
+        return $this;
     }
 
-    public function setCrtPass($crtPass) {
-        $this->crtPass = $crtPass;
+    public function setSslKey($sslKey) {
+        $this->sslKey = $sslKey;
         return $this;
     }
 }
