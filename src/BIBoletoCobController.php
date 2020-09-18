@@ -21,6 +21,10 @@ class BIBoletoCobController {
     
     private $config;
     
+    private $crtPath;
+    
+    private $crtPass;
+    
     private function __construct() {
         $this->config = [];
         $this->token = null;
@@ -49,6 +53,24 @@ class BIBoletoCobController {
 
     public function setConfig(array $config) {
         $this->config = $config;
+        return $this;
+    }
+    
+    public function getCrtPath() {
+        return $this->crtPath;
+    }
+
+    public function setCrtPath($crtPath) {
+        $this->crtPath = $crtPath;
+        return $this;
+    }
+    
+    public function getCrtPass() {
+        return $this->crtPass;
+    }
+
+    public function setCrtPass($crtPass) {
+        $this->crtPass = $crtPass;
         return $this;
     }
 }

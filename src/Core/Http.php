@@ -24,8 +24,8 @@ class Http {
     public function __construct(array $config = []) {
         $defaultConfig = array(
             'base_uri' => self::BASE_URL,
-            'timeout' => 10,
-            'headers' => array(
+            \GuzzleHttp\RequestOptions::TIMEOUT => 10,
+            \GuzzleHttp\RequestOptions::HEADERS => array(
                 'content-type' => 'application/json'
             )
         );
