@@ -19,7 +19,7 @@ class Http {
     
     protected $http;
     
-    const BASE_URL = "https://apis.bancointer.com.br:8443/openbanking/v1/certificado/boletos/";
+    const BASE_URL = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos/";
            
     public function __construct(array $config = []) {
         $defaultConfig = array(
