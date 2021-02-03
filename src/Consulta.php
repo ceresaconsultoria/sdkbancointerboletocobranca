@@ -22,13 +22,13 @@ class Consulta extends Core\Http{
     public function listar(array $query = []){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->get("/". http_build_query($query), array(
+        $response = $this->http->get("", array(
+            "query" => $query,
             "headers" => [
                 "x-inter-conta-corrente" => $controller->getToken(),
-                "cert" => [$controller->getCert(), $controller->getPassphrase()],
-                "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()],
-                'verify' => true
-            ]
+            ],
+            "cert" => [$controller->getCert(), $controller->getPassphrase()],
+            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));
 
         $response = (string)$response->getBody();
@@ -39,13 +39,12 @@ class Consulta extends Core\Http{
     public function detalhes($nossoNumero){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->get("/".$nossoNumero, array(
+        $response = $this->http->get($nossoNumero, array(
             "headers" => [
                 "x-inter-conta-corrente" => $controller->getToken(),
-                "cert" => [$controller->getCert(), $controller->getPassphrase()],
-                "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()],
-                'verify' => true
-            ]
+            ],
+            "cert" => [$controller->getCert(), $controller->getPassphrase()],
+            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));
 
         $response = (string)$response->getBody();

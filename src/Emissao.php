@@ -23,7 +23,7 @@ class Emissao extends Core\Http{
     public function incluir(array $body){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post("/", array(
+        $response = $this->http->post("", array(
             "headers" => [
                 "x-inter-conta-corrente" => $controller->getToken()
             ],
