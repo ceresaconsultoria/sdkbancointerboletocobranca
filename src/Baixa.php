@@ -9,27 +9,26 @@
 namespace BIBoletoCob;
 
 /**
- * Description of GerarBoleto
+ * Description of Baixa
  *
  * @author weslley
  */
-class Emissao extends Core\Http{
-    
-    
-    
+class Baixa extends Core\Http{
     public function __construct() {
         $controller = BIBoletoCobController::getInstance();        
         parent::__construct($controller->getConfig());
     }
     
-    public function incluir(array $body){
+    public function executar($nossoNumero, $codigoBaixa){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post("", array(
+        $response = $this->http->post($nossoNumero."/baixas", array(
+            "json" => array(
+                "codigoBaixa" => $codigoBaixa
+            ),
             "headers" => [
                 "x-inter-conta-corrente" => $controller->getToken()
             ],
-            "json" => $body,
             "cert" => [$controller->getCert(), $controller->getPassphrase()],
             "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));

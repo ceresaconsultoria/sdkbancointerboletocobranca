@@ -9,27 +9,23 @@
 namespace BIBoletoCob;
 
 /**
- * Description of GerarBoleto
+ * Description of PDF
  *
  * @author weslley
  */
-class Emissao extends Core\Http{
-    
-    
-    
+class PDF extends Core\Http{
     public function __construct() {
         $controller = BIBoletoCobController::getInstance();        
         parent::__construct($controller->getConfig());
     }
     
-    public function incluir(array $body){
+    public function gerar($nossoNumero){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post("", array(
+        $response = $this->http->get($nossoNumero."/pdf", array(
             "headers" => [
                 "x-inter-conta-corrente" => $controller->getToken()
             ],
-            "json" => $body,
             "cert" => [$controller->getCert(), $controller->getPassphrase()],
             "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));
