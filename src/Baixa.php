@@ -14,6 +14,16 @@ namespace BIBoletoCob;
  * @author weslley
  */
 class Baixa extends Core\Http{
+    
+    const CODIGO_BAIXA_ACERTOS = "ACERTOS";
+    const CODIGO_BAIXA_PROTESTADO = "PROTESTADO";
+    const CODIGO_BAIXA_DEVOLUCAO = "DEVOLUCAO";
+    const CODIGO_BAIXA_PROTESTOAPOSBAIXA = "PROTESTOAPOSBAIXA";
+    const CODIGO_BAIXA_PAGODIRETOAOCLIENTE = "PAGODIRETOAOCLIENTE";
+    const CODIGO_BAIXA_SUBISTITUICAO = "SUBISTITUICAO";
+    const CODIGO_BAIXA_FALTADESOLUCAO = "FALTADESOLUCAO";
+    const CODIGO_BAIXA_APEDIDODOCLIENTE = "APEDIDODOCLIENTE";
+    
     public function __construct() {
         $controller = BIBoletoCobController::getInstance();        
         parent::__construct($controller->getConfig());
