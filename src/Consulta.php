@@ -13,7 +13,7 @@ namespace BIBoletoCob;
  *
  * @author weslley
  */
-class Consulta {
+class Consulta extends Core\Http{
     public function __construct() {
         $controller = BIBoletoCobController::getInstance();        
         parent::__construct($controller->getConfig());
