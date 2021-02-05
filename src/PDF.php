@@ -30,8 +30,6 @@ class PDF extends Core\Http{
             "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
         ));
 
-        $response = (string)$response->getBody();
-
-        return json_decode($response);
+        return $response->getBody()->getContents();
     }
 }
