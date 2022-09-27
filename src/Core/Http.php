@@ -19,12 +19,12 @@ class Http {
     
     protected $http;
     
-    const BASE_URL = "https://apis.bancointer.com.br/openbanking/v1/certificado/boletos/";
+    const BASE_URL = "https://cdpj.partners.bancointer.com.br/oauth/v2/";
            
     public function __construct(array $config = []) {
         $defaultConfig = array(
             'base_uri' => self::BASE_URL,
-            \GuzzleHttp\RequestOptions::TIMEOUT => 10,
+            \GuzzleHttp\RequestOptions::TIMEOUT => 30,
             \GuzzleHttp\RequestOptions::HEADERS => array(
                 'content-type' => 'application/json'
             )

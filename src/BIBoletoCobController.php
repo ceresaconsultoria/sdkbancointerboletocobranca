@@ -17,19 +17,19 @@ class BIBoletoCobController {
         
     public static $instance;
     
-    private $token;
-    
+    private $accessToken;    
+    private $tokenType;
+
     private $config;
-    
+
     private $cert;
-    
     private $passphrase;
-    
     private $sslKey;
     
     private function __construct() {
         $this->config = [];
-        $this->token = null;
+        $this->accessToken = null;
+        $this->tokenType = null;
     }
     
     public static function getInstance() : BIBoletoCobController{
@@ -38,15 +38,6 @@ class BIBoletoCobController {
         }
         
         return self::$instance;
-    }
-    
-    public function getToken() {
-        return $this->token;
-    }
-
-    public function setToken($token) {
-        $this->token = $token;
-        return $this;
     }
     
     public function getConfig() {
@@ -58,6 +49,14 @@ class BIBoletoCobController {
         return $this;
     }
     
+    public function getAccessToken() {
+        return $this->accessToken;
+    }
+
+    public function getTokenType() {
+        return $this->tokenType;
+    }
+
     public function getCert() {
         return $this->cert;
     }
@@ -68,6 +67,16 @@ class BIBoletoCobController {
 
     public function getSslKey() {
         return $this->sslKey;
+    }
+
+    public function setAccessToken($accessToken) {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    public function setTokenType($tokenType) {
+        $this->tokenType = $tokenType;
+        return $this;
     }
 
     public function setCert($cert) {

@@ -46,10 +46,10 @@ class Consulta extends Core\Http{
         $response = $this->http->get("", array(
             "query" => $query,
             "headers" => [
-                "x-inter-conta-corrente" => $controller->getToken(),
+                "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],
-            "cert" => [$controller->getCert(), $controller->getPassphrase()],
-            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
+            "cert" => $controller->getCert(),
+            "ssl_key" => $controller->getSslKey()
         ));
 
         $response = (string)$response->getBody();
@@ -62,10 +62,10 @@ class Consulta extends Core\Http{
         
         $response = $this->http->get($nossoNumero, array(
             "headers" => [
-                "x-inter-conta-corrente" => $controller->getToken(),
+                "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],
-            "cert" => [$controller->getCert(), $controller->getPassphrase()],
-            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
+            "cert" => $controller->getCert(),
+            "ssl_key" => $controller->getSslKey()
         ));
 
         $response = (string)$response->getBody();

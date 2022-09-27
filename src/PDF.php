@@ -24,10 +24,10 @@ class PDF extends Core\Http{
         
         $response = $this->http->get($nossoNumero."/pdf", array(
             "headers" => [
-                "x-inter-conta-corrente" => $controller->getToken()
+                "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],
-            "cert" => [$controller->getCert(), $controller->getPassphrase()],
-            "ssl_key" => [$controller->getSslKey(), $controller->getPassphrase()]
+            "cert" => $controller->getCert(),
+            "ssl_key" => $controller->getSslKey()
         ));
 
         return $response->getBody()->getContents();
