@@ -30,12 +30,17 @@ class Autorizacao extends Core\Http{
         $controller = BIBoletoCobController::getInstance();
         
         $response = $this->http->post("token", array(
-            "json" => [
+            \GuzzleHttp\RequestOptions::HEADERS => array(
+                'content-type' => 'application/x-www-form-urlencoded'
+            ),
+            "form_params" => [
                 'client_id' => $clientId,
                 'client_secret' => $clientSecret,
                 'grant_type' => 'client_credentials',
                 'scope' => $scope,
-            ]
+            ],
+            "cert" => $controller->getCert(),
+            "ssl_key" => $controller->getSslKey()
         ));
 
         $response = (string)$response->getBody();
