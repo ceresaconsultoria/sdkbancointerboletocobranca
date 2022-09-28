@@ -32,7 +32,7 @@ class Baixa extends Core\Http{
     public function executar($nossoNumero, $codigoBaixa){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post($nossoNumero."/baixas", array(
+        $response = $this->http->post("boletos/".$nossoNumero."/cancelar", array(
             "json" => array(
                 "codigoBaixa" => $codigoBaixa
             ),

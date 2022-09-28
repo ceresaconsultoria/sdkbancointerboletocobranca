@@ -45,7 +45,7 @@ class Emissao extends Core\Http{
     public function incluir(array $body){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post("", array(
+        $response = $this->http->post("boletos", array(
             "headers" => [
                 "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],

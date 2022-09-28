@@ -22,7 +22,7 @@ class PDF extends Core\Http{
     public function gerar($nossoNumero){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->get($nossoNumero."/pdf", array(
+        $response = $this->http->get("boletos/".$nossoNumero."/pdf", array(
             "headers" => [
                 "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],
