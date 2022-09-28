@@ -60,7 +60,7 @@ class Consulta extends Core\Http{
     public function detalhes($nossoNumero){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->get($nossoNumero, array(
+        $response = $this->http->get("cobranca/v2/boletos/".$nossoNumero, array(
             "headers" => [
                 "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
             ],
