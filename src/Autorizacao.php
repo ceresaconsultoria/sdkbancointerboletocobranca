@@ -29,7 +29,7 @@ class Autorizacao extends Core\Http{
         
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->post("token", array(
+        $response = $this->http->post("oauth/v2/token", array(
             \GuzzleHttp\RequestOptions::HEADERS => array(
                 'content-type' => 'application/x-www-form-urlencoded'
             ),

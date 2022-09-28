@@ -19,7 +19,7 @@ class Http {
     
     protected $http;
     
-    const BASE_URL = "https://cdpj.partners.bancointer.com.br/oauth/v2/";
+    const BASE_URL = "https://cdpj.partners.bancointer.com.br/";
            
     public function __construct(array $config = []) {
         $defaultConfig = array(

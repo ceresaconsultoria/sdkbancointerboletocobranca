@@ -43,7 +43,7 @@ class Consulta extends Core\Http{
     public function listar(array $query = []){
         $controller = BIBoletoCobController::getInstance();
         
-        $response = $this->http->get("boletos", array(
+        $response = $this->http->get("cobranca/v2/boletos", array(
             "query" => $query,
             "headers" => [
                 "Authorization" => $controller->getTokenType() . ' ' . $controller->getAccessToken()
