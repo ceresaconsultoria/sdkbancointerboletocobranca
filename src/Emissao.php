@@ -15,8 +15,9 @@ namespace BIBoletoCob;
  */
 class Emissao extends Core\Http{
     
-    const NUM_DIAS_AGENDA_TRINTA = "TRINTA";
-    const NUM_DIAS_AGENDA_SESSENTA = "SESSENTA";
+    const NUM_DIAS_AGENDA_SETE = 7;
+    const NUM_DIAS_AGENDA_TRINTA = 30;
+    const NUM_DIAS_AGENDA_SESSENTA = 60;
     
     const TIPO_PESSOA_FISICA = "FISICA";
     const TIPO_PESSOA_JURIDICA = "JURIDICA";
